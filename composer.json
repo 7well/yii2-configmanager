@@ -1,0 +1,40 @@
+{
+    "name": "julatools/yii2-configmanager",
+    "description": "Flexible configuartion manager for Yii2",
+    "keywords": ["yii2", "yii2-configmanager", "configuration management", "julatools"],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/julatools/yii2-configmanager/issues?state=open",
+        "forum": "https://gitter.im/julatools/yii2-configmanager",
+        "source": "https://github.com/julatools/yii2-configmanager"
+    },
+    "authors": [
+        {
+            "name": "Christian Dumhart",
+            "email": "christian.dumhart@chd.at",
+            "homepage": "http://www.chd.at"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "yiisoft/yii2": "~2.0",
+        "julatools/user": "0.9.x-dev",
+    },
+    "autoload": {
+        "psr-4": {
+            "julatools\\configmanager\\": ""
+        }
+    },
+    "extra": {
+        "bootstrap": "configmanager\\user\\Bootstrap",
+        "branch-alias": {
+            "dev-master": "0.1.x-dev",
+        },
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
+
