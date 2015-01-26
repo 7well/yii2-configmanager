@@ -1,5 +1,7 @@
 # Yii2-configmanager (https://packagist.org/packages/julatools/yii2-configmanager)
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/julatools/yii2-configmanager?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 For multiply settings a separate config set := template can be generated. This template can redefine the values from the parameter. If a parameter is not redefined, the default value is used. A template can inhered set parameters from a parent template. Templates can be associated with users. The parameters will be load during bootstrap. In a next version, caching is implement.  
 
 Current version is only a dev state, do not use is yet! 
