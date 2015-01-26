@@ -1,11 +1,18 @@
-# Yii2-configmanager (https://packagist.org/packages/julatools/yii2-configmanager)
+# Yii2-configmanager [![Latest Stable Version](https://poser.pugx.org/julatools/yii2-user/v/stable.svg)](https://packagist.org/packages/julatools/yii2-user) [![Total Downloads](https://poser.pugx.org/julatools/yii2-user/downloads.svg)](https://packagist.org/packages/julatools/yii2-user) [![License](https://poser.pugx.org/julatools/yii2-user/license.svg)](https://packagist.org/packages/julatools/yii2-user)
 
-For multiply settings a separate config set := template can be generated. This template can redefine the values from the parameter. If a parameter is not redefined, the default value is used. A template can inhered set parameters from a parent template. Templates can be associated with users. The parameters will be load during bootstrap. In a next version, caching is implement.  
+A simple parameter/configuration manager. This module can manage your configuration stored in a database. Each parameter can load at bootstrap if necessary or is available during the component in the application.
 
-Current version is only a dev state, do not use is yet! 
+The current version is a development snapshot, do not use in production application!
 
 
 > **NOTE:** Module is in initial development. Anything may change at any time.
+
+## Roadmap
+-	Configuration set(s)
+-	User configuration (need julatools/yii2-user)
+-	Tests
+-	Documentation
+
 
 ## Documentation
 
