@@ -7,7 +7,7 @@ easy three-step process.
 Step 1: Download Yii2-user using composer
 -----------------------------------------
 
-Add `"julatools/yii2-configmanager": "0.1.*@dev"` to the require section of your **composer.json** file. And run `composer update`
+Add `"julatools/yii2-configmanager": "*"` to the require section of your **composer.json** file. And run `composer update`
 to download and install Yii2-configmanager.
 Note: yii2-configmanager needs the julatools/yii2-user package. For configure this package see https://github.com/julatools/yii2-user
 
@@ -38,6 +38,7 @@ the migrations:
 ```bash
 $ php yii migrate/up --migrationPath=@vendor/julatools/yii2-configmanager/migrations
 ```
+> **NOTE:** If you have installed the yii-configmanager per `composer` you must edite the extionsions.php in vendor/yiisoft/: disable bootstrap loading from the configmanager component apply the migration and activate the cootstrap for die configmanager!
 
 FAQ
 ---
