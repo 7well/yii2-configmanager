@@ -38,7 +38,7 @@ the migrations:
 ```bash
 $ php yii migrate/up --migrationPath=@vendor/julatools/yii2-configmanager/migrations
 ```
-> **NOTE:** If you have installed the yii-configmanager per `composer` you must edite the extionsions.php in vendor/yiisoft/: disable bootstrap loading from the configmanager component apply the migration and activate the cootstrap for die configmanager!
+> **NOTE:** If you have installed the yii-configmanager per `composer` you must edite the extionsions.php in vendor/yiisoft/: disable bootstrap loading from the yii2-configmanager component apply the migration and activate the bootstrap for die configmanager!
 
 FAQ
 ---
