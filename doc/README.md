@@ -11,6 +11,7 @@ To setup a parameter as a component use a '@' character for parametername:
 
 Example:
 -Parameter db:
+```
 paramtername '@db' value:
 [
             'class' => 'yii\db\Connection',
@@ -19,12 +20,13 @@ paramtername '@db' value:
             'password' => 'topsecrete',
             'charset' => 'utf8',
         ]
-        
+```        
 
 Setup:
 currently no composer installation available user this:
 
 extensions.php:
+```
   'julatools/yii2-configmanager' =>
 		array (
 				'name' => 'julatools/yii2-configmanager',
@@ -35,15 +37,16 @@ extensions.php:
 				),
 				'bootstrap' => 'julatools\\configmanager\\Bootstrap',
 		),
-
+```
 and in your configuration file as new module:
+```
 'modules' => [
 ...
 	'configmanager' => [
 			'class' => 'julatools\configmanager\Module' ,
 	],
 ]
-				
+```				
 
 Getting Started
 ---------------
