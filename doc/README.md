@@ -23,22 +23,7 @@ paramtername '@db' value:
 ```        
 
 Setup:
-currently no composer installation available user this:
-
-extensions.php:
-```
-  'julatools/yii2-configmanager' =>
-		array (
-				'name' => 'julatools/yii2-configmanager',
-				'version' => '9999999-dev',
-				'alias' =>
-				array (
-						'@julatools/configmanager' => $vendorDir . '/julatools/yii2-configmanager',
-				),
-				'bootstrap' => 'julatools\\configmanager\\Bootstrap',
-		),
-```
-and in your configuration file as new module:
+In your configuration file as new module:
 ```
 'modules' => [
 ...
