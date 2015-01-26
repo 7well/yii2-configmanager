@@ -19,7 +19,7 @@
     "minimum-stability": "dev",
     "require": {
         "yiisoft/yii2": "~2.0",
-        "julatools/yii2-user": "0.9.*@dev"
+        "julatools/yii2-user": "~0.10"
     },
     "autoload": {
         "psr-4": {
