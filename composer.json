@@ -27,7 +27,7 @@
         }
     },
     "extra": {
-        "bootstrap": "configmanager\\user\\Bootstrap",
+        "bootstrap": "julatools\\configmanager\\Bootstrap",
         "asset-installer-paths": {
             "npm-asset-library": "vendor/npm",
             "bower-asset-library": "vendor/bower"
