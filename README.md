@@ -16,7 +16,7 @@ The current version is a development snapshot, do not use in production applicat
 
 ## Documentation
 
-[Installation instructions](docs/installation.md) | [Definitive guide to Yii2-configmanager](docs/README.md)
+[Installation instructions](doc/installation.md) | [Definitive guide to Yii2-configmanager](doc/README.md)
 
 ## Contributing
 
