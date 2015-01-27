@@ -18,6 +18,9 @@ use yii\i18n\PhpMessageSource;
 use yii\web\GroupUrlRule;
 use yii\console\Application as ConsoleApplication;
 use julatools\configmanager\models\Parameter;
+use julatools\configmanager\models\Config;
+use julatools\configmanager\models\ConfigUser;
+use julatools\configmanager\models\ConfigParameter;
 
 /**
  * Bootstrap class registers configmanager components.
@@ -29,9 +32,21 @@ class Bootstrap implements BootstrapInterface
     /** @var array Model's map */
     private $_modelMap = [
         'Parameter'             => 'julatools\configmanager\models\Parameter',
-    	'ParameterSearch'             => 'julatools\configmanager\models\ParameterSearch',
+    	'ParameterSearch'       => 'julatools\configmanager\models\ParameterSearch',
+     	'ConfigSearch'       =>    'julatools\configmanager\models\ConfigSearch',
+    	'ConfigParameterSearch'       =>    'julatools\configmanager\models\ConfigSearch',
+    	'ConfigUser'       =>    'julatools\configmanager\models\ConfigUser',
     ];
 
+    private function setParameter($app, $parametername, $parametervalue) {
+		if ($parametername === '@') { // parameter is a compomnent
+			eval ( '$helpdummy = ' . $parametervalue . ';' );
+			$app->set ( substr ( $para->parametername, 1 ), $helpdummy );
+		} else {
+			$app->params [$parametername] = $parametervalue;
+		}
+	}
+	
     /** @inheritdoc */
     public function bootstrap($app)
     {
@@ -58,18 +73,35 @@ class Bootstrap implements BootstrapInterface
                 'basePath' => __DIR__ . '/messages',
             ];
 
+            //Load parameters from database
             $parameters = Parameter::find()->where(['bootstrap'=>'1'])->all();	//only on bootstrap are necessary
 
-           // \Yii::trace('dump: ' . eval($para->value), __METHOD__);
             foreach($parameters as $para)
             {
-            	if($para->parametername[0] === '@')
-            	{//parameter is a compomnent
-            		eval('$helpdummy = ' . $para->value . ';');
-            		$app->set(substr($para->parametername, 1), $helpdummy);
-            	}
-            	else {
-            		$app->params[$para->parametername] = $para->value;
+            	$this->setParameter($app, $para->parametername, $para->value);
+            }
+            
+            $is_config_set = Parameter::findOne(['parametername'=>'julatools/configmanager/config_set']);
+            $is_user_config_set = Parameter::findOne(['parametername'=>'julatools/configmanager/user_parameter']);
+            if(isset($app->params['julatools/configmanager/config_set']) && isset($app->params['julatools/configmanager/user_parameter']) &&
+            		$app->params['julatools/configmanager/config_set'] == 1 && $app->params['julatools/configmanager/user_parameter'] ==1 &&
+            		isset(\Yii::$app->user->id)
+            		)
+            {
+            	$configuser = ConfigUser::findOne(['user_ID'=> \Yii::$app->user->id]);
+            	if(isset($configuser))
+            	{
+            		$config = Config::findOne(['ID'=> $configuser->config_ID]);
+            		$parent_parameters = ConfigParameter::find()->where(['config_ID'=>$config->parent_ID])->all();
+            		$user_parameters = ConfigParameter::find()->where(['config_ID'=>$config->ID])->all();
+            		foreach($parent_parameters as $para)
+            		{
+            			$this->setParameter($app, $para->parameter->parametername, $para->value);
+            		}
+            		foreach($user_parameters as $para)
+            		{
+            			$this->setParameter($app, $para->parameter->parametername, $para->value);
+            		}
             	}
             }
         }

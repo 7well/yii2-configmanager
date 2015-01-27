@@ -12,7 +12,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
-use julatools\configmanager\models\Parameter;
+use julatools\configmanager\models\Config;
 
 /**
  * @var yii\web\View $this
@@ -20,13 +20,13 @@ use julatools\configmanager\models\Parameter;
  * @var julatools\user\models\UserSearch $searchModel
  */
 
-$this->title = Yii::t('configmanager', 'Manage Parameters');
+$this->title = Yii::t('configmanager', 'Manage Configuration(Config-Sets)');
 $this->params['breadcrumbs'][] = $this->title;
 
-//echo \Yii::$app->params['chd'] . '<br>';
-echo Parameter::getParameterValue('chd');
+echo "TEST chd: " . \Yii::$app->params['chd'] . ' <br>';
+echo "TEST chd2: " . \Yii::$app->params['chd2'] . '<br>';
 ?>
-<h1><?= Html::encode($this->title) ?> <?= Html::a(Yii::t('configmanager', 'Create a parameter'), ['create'], ['class' => 'btn btn-success']) ?></h1>
+<h1><?= Html::encode($this->title) ?> <?= Html::a(Yii::t('configmanager', 'Create a Config-Set'), ['create'], ['class' => 'btn btn-success']) ?></h1>
 
 
 <?php Pjax::begin() ?>
@@ -36,20 +36,21 @@ echo Parameter::getParameterValue('chd');
     'filterModel'  => $searchModel,
     'layout'  => "{items}\n{pager}",
     'columns' => [
-        'parametername',
-        'value',
-        'defaultvalue',
-        'module_ID',
+        'title',
+        'comment',
+        'parent_ID',
         [
-            'attribute' => 'bootstrap',
-            'format' => 'boolean',
-            /*'value' => function ($model) {
-                    return $model->bootstrap == true
-                        ? 'yes'
-                        : 'no';
-                },
-            'format' => 'html',*/
-        ],/*
+        'header' => Yii::t('configmanager', 'details'),
+        'value' => function ($model) {
+                    return Html::a(Yii::t('configmanager', 'Edit details'), ['details', 'id' => $model->ID], [
+                    		'class' => 'btn btn-xs btn-success btn-block',
+                    		'data-method' => 'post',
+                    ]);
+                
+            },
+            'format' => 'html',
+        ],
+		/*
         [
             'attribute' => 'created_at',
             'value' => function ($model) {
@@ -93,7 +94,7 @@ echo Parameter::getParameterValue('chd');
         ],*/
         [
             'class' => 'yii\grid\ActionColumn',
-            'template' => '{update} {delete}',
+            'template' => '{update} {delete} {details}',
         ],
     ],
 ]); ?>

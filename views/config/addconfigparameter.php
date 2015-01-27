@@ -17,8 +17,8 @@ use yii\widgets\ActiveForm;
  * @var julatools\user\models\User $user
  */
 
-$this->title = Yii::t('configmanager', 'Create a parameter');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('configmanager', 'Parameter'), 'url' => ['index']];
+$this->title = Yii::t('configmanager', 'Add Parameter to Config-Set');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('configmanager', 'Config'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'enableClientValidation' => false
         ]); ?>
 
-        <?= $this->render('_parameter', ['form' => $form, 'parameter' => $parameter]) ?>
+        <?= $this->render('_configparameter', ['form' => $form, 'config' => $configparameter]) ?>
 
         <div class="form-group">
             <?= Html::submitButton(Yii::t('configmanager', 'Save'), ['class' => 'btn btn-success']) ?>

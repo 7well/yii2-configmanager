@@ -33,6 +33,27 @@ In your configuration file as new module:
 ]
 ```				
 
+Configruation Sets
+---------------
+Configuration-Sets can be defined to set special configuration, e.g. config for backends/admin interfaces or special configuration for users. 
+The compoment will overwrite the system wide defined parameters (in sys_parameter table) with the new defined values. 
+A Configuration-Set can inherent the parameters from a parent config-set.
+
+Parameter usage:
+system defined parameter -> config-set (parent -> child):
+Child will overwrite defined parameters from parent or system. Parent can overwrite system defined parameters. If a parameter is not defined the system wide defined paramter or the parent parameter is used. It is also possible to leafe the parent set blank.
+
+To use config-set insert or set parameter:
+julatools/configmanager/config_set = 1
+
+To use the user defined parameters insert or set parameter in the system wide parameter:
+julatools/configmanager/user_parameter = 1
+
+
+
+
+> **NOTE:** No multiple inheritance is supported!
+
 Getting Started
 ---------------
 

@@ -11,7 +11,7 @@
 
 namespace julatools\configmanager\models;
 
-use julatools\configmanager\models\Parameter;
+use julatools\configmanager\models\Config;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
@@ -22,23 +22,21 @@ use yii\data\ActiveDataProvider;
  */
 
 
-class ParameterSearch extends Parameter
+
+class ConfigSearch extends Parameter
 {
     /** @var string */
-    public $parametername;
+    public $title;
 
     /** @var string */
     public $comment;
-    
-    /** @var string */
-    public $defaultvalue;
 
+    
        /** @inheritdoc */
     public function rules()
     {
         return [
-            [['parametername', 'comment', 'defaultvalue'], 'string'],
-        	[['bootstrap'], 'safe'],
+            [['title', 'comment'], 'string'],
         ];
     }
 
@@ -46,10 +44,8 @@ class ParameterSearch extends Parameter
     public function attributeLabels()
     {
         return [
-            'parametername'        => \Yii::t('configmanager', 'Parameter name'),
+            'title'        => \Yii::t('configmanager', 'Config title'),
             'comment'           => \Yii::t('configmanager', 'Comment'),
-            'defaultvalue'      => \Yii::t('configmanager', 'Default value'),
-        	'bootstrap'      => \Yii::t('configmanager', 'On bootstrap (search on/ON)'),
         ];
     }
 
@@ -59,7 +55,7 @@ class ParameterSearch extends Parameter
      */
     public function search($params)
     {
-        $query = Parameter::find();
+        $query = Config::find();
 		$dataProvider = new ActiveDataProvider([
 		'query' => $query,
 		]);
@@ -73,22 +69,9 @@ class ParameterSearch extends Parameter
 		);
 
 		$query
-		->andFilterWhere(['like', 'parametername', $this->parametername])
-		->andFilterWhere(['like', 'value', $this->value])
-		->andFilterWhere(['like', 'defaultvalue', $this->defaultvalue]);
+		->andFilterWhere(['like', 'title', $this->title])
+		->andFilterWhere(['like', 'comment', $this->comment]);
 		
-		if(isset($this->bootstrap))
-		{
-			if(!strcasecmp($this->bootstrap,"on"))
-			{
-				$query->andFilterWhere(['like', 'bootstrap', 1]);
-			}
-			else if(!strcasecmp($this->bootstrap,"off"))
-			{
-				$query->andFilterWhere(['like', 'bootstrap', 0]);
-			}
-			
-		}
 		return $dataProvider;
     }
 }

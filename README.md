@@ -8,8 +8,7 @@ The current version is a development snapshot, do not use in production applicat
 > **NOTE:** Module is in initial development. Anything may change at any time.
 
 ## Roadmap
--	Configuration set(s)
--	User configuration (need julatools/yii2-user)
+-   Improve UI (drop down list for parent config, flash messages, etc.)
 -	Tests
 -	Documentation
 

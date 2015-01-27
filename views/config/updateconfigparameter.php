@@ -18,9 +18,9 @@ use yii\widgets\ActiveForm;
  * @var julatools\configmanager\Module         $module
  */
 
-$parameter = $model;
-$this->title = Yii::t('configmanager', 'Update parameter');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('configmanager', 'Parameter'), 'url' => ['index']];
+$configparameter = $model;
+$this->title = Yii::t('configmanager', 'Update Config-Parameter');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('configmanager', 'Config'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::encode($this->title) ?>
     </div>
     <div class="panel-body">
-        <?= $this->render('_parameter', ['form' => $form, 'parameter' => $parameter]) ?>
+        <?= $this->render('_configparameter', ['form' => $form, 'config' => $configparameter]) ?>
         <?= Html::submitButton(Yii::t('configmanager', 'Save'), ['class' => 'btn btn-primary btn-sm']) ?>
     </div>
 </div>
