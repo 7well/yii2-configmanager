@@ -22,6 +22,7 @@ use julatools\configmanager\models\Config;
 
 $this->title = Yii::t('configmanager', 'Manage Configuration(Config-Sets)');
 $this->params['breadcrumbs'][] = $this->title;
+print_r(Yii::$app->modules);
 ?>
 <h1><?= Html::encode($this->title) ?> <?= Html::a(Yii::t('configmanager', 'Create a Config-Set'), ['create'], ['class' => 'btn btn-success']) ?></h1>
 

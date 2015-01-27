@@ -39,10 +39,15 @@ class Bootstrap implements BootstrapInterface
     ];
 
     private function setParameter($app, $parametername, $parametervalue) {
-		if ($parametername === '@') { // parameter is a compomnent
+		if ($parametername[0] == '@') { // parameter is a compomnent
 			eval ( '$helpdummy = ' . $parametervalue . ';' );
-			$app->set ( substr ( $para->parametername, 1 ), $helpdummy );
-		} else {
+			$app->set ( substr ( $parametername, 1 ), $helpdummy );
+		} else if($parametername[0] == '#'){
+			eval ( '$helpdummy = ' . $parametervalue . ';' );
+			$module = [substr ( $parametername, 1 ) => $helpdummy];
+			$app->modules = array_merge($app->modules, $module);
+		}
+		else {
 			$app->params [$parametername] = $parametervalue;
 		}
 	}
