@@ -1,4 +1,13 @@
 <?php
+/*
+ * This file is part of the Julatools project.
+ *
+ * (c) Julatools project <http://github.com/julatools/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 
 namespace julatools\configmanager\models;
 
@@ -14,6 +23,7 @@ use Yii;
  *
  * @property SysConfig $config
  * @property SysParameter $parameter
+ * @author Christian Dumhart <christian.dumhart@chd.at>
  */
 class ConfigParameter extends \yii\db\ActiveRecord
 {

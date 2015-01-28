@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## v0.1.2 [22 Jan 2015]
+- added support for module configuration using # at the beginning of a paramtername
+
 ## v0.1.0 [22 Jan 2015]
 
 - Initial release
