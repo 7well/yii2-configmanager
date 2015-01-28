@@ -4,7 +4,7 @@ Installation
 This document will guide you through the process of installing Yii2-configmanager using **composer**. Installation is a quick and
 easy three-step process.
 
-Step 1: Download Yii2-user using composer
+Step 1: Download Yii2-configmanager using composer
 -----------------------------------------
 
 Add `"julatools/yii2-configmanager": "*"` to the require section of your **composer.json** file. And run `composer update`

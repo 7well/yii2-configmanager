@@ -11,7 +11,7 @@ The current version is a development snapshot, do not use in production applicat
 -   Improve UI (drop down list for parent config, flash messages, etc.)
 -	Tests
 -	Documentation
-
+-	Detailed configuration possibility e.g. component database hat two an more property, currently you must set this by a php array string. In future it should be possible to generate this array during singly parameter and the config manager should gernerate one array.
 
 ## Documentation
 

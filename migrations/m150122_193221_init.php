@@ -59,6 +59,9 @@ class m150122_193221_init extends Migration
 
     public function down()
     {
+         $this->dropTable('{{%sys_config_user}}');
+         $this->dropTable('{{%sys_config_parameter}}');
+         $this->dropTable('{{%sys_config}}');
          $this->dropTable('{{%sys_parameter}}');
     }
 }

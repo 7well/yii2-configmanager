@@ -88,27 +88,30 @@ class Bootstrap implements BootstrapInterface
             
             $is_config_set = Parameter::findOne(['parametername'=>'julatools/configmanager/config_set']);
             $is_user_config_set = Parameter::findOne(['parametername'=>'julatools/configmanager/user_parameter']);
-            if(isset($app->params['julatools/configmanager/config_set']) && isset($app->params['julatools/configmanager/user_parameter']) &&
-            		$app->params['julatools/configmanager/config_set'] == 1 && $app->params['julatools/configmanager/user_parameter'] ==1 &&
-            		isset(\Yii::$app->user->id)
-            		)
-            {
-            	$configuser = ConfigUser::findOne(['user_ID'=> \Yii::$app->user->id]);
-            	if(isset($configuser))
-            	{
-            		$config = Config::findOne(['ID'=> $configuser->config_ID]);
-            		$parent_parameters = ConfigParameter::find()->where(['config_ID'=>$config->parent_ID])->all();
-            		$user_parameters = ConfigParameter::find()->where(['config_ID'=>$config->ID])->all();
-            		foreach($parent_parameters as $para)
-            		{
-            			$this->setParameter($app, $para->parameter->parametername, $para->value);
-            		}
-            		foreach($user_parameters as $para)
-            		{
-            			$this->setParameter($app, $para->parameter->parametername, $para->value);
-            		}
-            	}
-            }
+		if (get_class ( \Yii::$app ) === 'yii\web\Application') {
+			if (isset ( $app->params ['julatools/configmanager/config_set'] ) && isset ( $app->params ['julatools/configmanager/user_parameter'] ) && $app->params ['julatools/configmanager/config_set'] == 1 && $app->params ['julatools/configmanager/user_parameter'] == 1 && isset ( \Yii::$app->user->id )) {
+				$configuser = ConfigUser::findOne ( [ 
+						'user_ID' => \Yii::$app->user->id 
+				] );
+				if (isset ( $configuser )) {
+					$config = Config::findOne ( [ 
+							'ID' => $configuser->config_ID 
+					] );
+					$parent_parameters = ConfigParameter::find ()->where ( [ 
+							'config_ID' => $config->parent_ID 
+					] )->all ();
+					$user_parameters = ConfigParameter::find ()->where ( [ 
+							'config_ID' => $config->ID 
+					] )->all ();
+					foreach ( $parent_parameters as $para ) {
+						$this->setParameter ( $app, $para->parameter->parametername, $para->value );
+					}
+					foreach ( $user_parameters as $para ) {
+						$this->setParameter ( $app, $para->parameter->parametername, $para->value );
+					}
+				}
+			}
+		}
         }
         
     }
