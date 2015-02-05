@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of the Julatools project.
+ * This file is part of the 7well project.
  *
- * (c) Julatools project <http://github.com/julatools>
+ * (c) 7well project <http://github.com/7well>
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 
 /**
  * @var yii\web\View              $this
- * @var julatools\user\models\User $user
+ * @var 7well\user\models\User $user
  */
 
 $this->title = Yii::t('configmanager', 'Create a parameter');

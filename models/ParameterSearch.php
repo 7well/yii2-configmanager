@@ -1,17 +1,17 @@
 <?php
 
 /*
- * This file is part of the Julatools project.
+ * This file is part of the 7well project.
  *
- * (c) Julatools project <http://github.com/julatools/>
+ * (c) 7well project <http://github.com/7well/>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace julatools\configmanager\models;
+namespace 7well\configmanager\models;
 
-use julatools\configmanager\models\Parameter;
+use 7well\configmanager\models\Parameter;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 

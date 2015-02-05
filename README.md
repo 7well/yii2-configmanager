@@ -1,4 +1,4 @@
-# Yii2-configmanager [![Latest Stable Version](https://poser.pugx.org/julatools/yii2-configmanager/v/stable.svg)](https://packagist.org/packages/julatools/yii2-configmanager) [![Total Downloads](https://poser.pugx.org/julatools/yii2-configmanager/downloads.svg)](https://packagist.org/packages/julatools/yii2-configmanager) [![License](https://poser.pugx.org/julatools/yii2-configmanager/license.svg)](https://packagist.org/packages/julatools/yii2-configmanager)
+# Yii2-configmanager [![Latest Stable Version](https://poser.pugx.org/7well/yii2-configmanager/v/stable.svg)](https://packagist.org/packages/7well/yii2-configmanager) [![Total Downloads](https://poser.pugx.org/7well/yii2-configmanager/downloads.svg)](https://packagist.org/packages/7well/yii2-configmanager) [![License](https://poser.pugx.org/7well/yii2-configmanager/license.svg)](https://packagist.org/packages/7well/yii2-configmanager)
 
 A simple parameter/configuration manager. This module can manage your configuration stored in a database. Each parameter can load at bootstrap if necessary or is available during the component in the application.
 

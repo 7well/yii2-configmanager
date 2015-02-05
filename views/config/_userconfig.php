@@ -1,10 +1,10 @@
 <?php
 use yii\helpers\ArrayHelper;
-use julatools\configmanager\models\Config;
+use 7well\configmanager\models\Config;
 /*
- * This file is part of the Julatools project.
+ * This file is part of the 7well project.
  *
- * (c)2015 Julatools project <http://github.com/julatools>
+ * (c)2015 7well project <http://github.com/7well>
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
@@ -12,7 +12,7 @@ use julatools\configmanager\models\Config;
 
 /**
  * @var yii\widgets\ActiveForm    $form
- * @var julatools\user\models\Config $config
+ * @var 7well\user\models\Config $config
  */
 ?>
 

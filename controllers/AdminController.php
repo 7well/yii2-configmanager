@@ -1,23 +1,23 @@
 <?php
 
 /*
- * This file is part of the Julatools project.
+ * This file is part of the 7well project.
  *
- * (c) Julatools project <http://github.com/julatools/>
+ * (c) 7well project <http://github.com/7well/>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
 
-namespace julatools\configmanager\controllers;
+namespace 7well\configmanager\controllers;
 
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
-use julatools\configmanager\models\ParameterSearch;
-use julatools\configmanager\models\Parameter;
+use 7well\configmanager\models\ParameterSearch;
+use 7well\configmanager\models\Parameter;
 
 /**
  * AdminController allows you to administrate users.

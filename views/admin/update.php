@@ -3,7 +3,7 @@
 /*
  * This file is part of the Jultatools project.
  *
- * (c) Julatools project <http://github.com/julatools>
+ * (c) 7well project <http://github.com/7well>
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
@@ -14,8 +14,8 @@ use yii\widgets\ActiveForm;
 
 /**
  * @var yii\web\View                 $this
- * @var julatools\configmanager\models\Parameter    $parameter
- * @var julatools\configmanager\Module         $module
+ * @var 7well\configmanager\models\Parameter    $parameter
+ * @var 7well\configmanager\Module         $module
  */
 
 $parameter = $model;

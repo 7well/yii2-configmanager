@@ -1,6 +1,6 @@
 <?php
 
-namespace julatools\configmanager;
+namespace 7well\configmanager;
 
 class Module extends \yii\base\Module
 {

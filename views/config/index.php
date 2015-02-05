@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of the Julatools project.
+ * This file is part of the 7well project.
  *
- * (c) Julatools project <http://github.com/julatools>
+ * (c) 7well project <http://github.com/7well>
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
@@ -12,12 +12,12 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
-use julatools\configmanager\models\Config;
+use 7well\configmanager\models\Config;
 
 /**
  * @var yii\web\View $this
  * @var yii\data\ActiveDataProvider $dataProvider
- * @var julatools\user\models\UserSearch $searchModel
+ * @var 7well\user\models\UserSearch $searchModel
  */
 
 $this->title = Yii::t('configmanager', 'Manage Configuration(Config-Sets)');
