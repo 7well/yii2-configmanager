@@ -22,6 +22,14 @@ paramtername '@db' value:
         ]
 ```        
 
+-User Module:
+Modules have the prefix '#':
+```
+paramtername '#user' value:
+[
+            'class' => 'chd7well\user\Module',
+        ]
+```      
 Setup:
 In your configuration file as new module:
 ```
