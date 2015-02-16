@@ -1,8 +1,8 @@
 <?php
 /*
- * This file is part of the 7well project.
+ * This file is part of the chd7well project.
  *
- * (c) 7well project <http://github.com/7well/>
+ * (c) chd7well project <http://github.com/chd7well/>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.

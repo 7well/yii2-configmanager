@@ -1,6 +1,6 @@
 <?php
 
-namespace 7well\configmanager;
+namespace chd7well\configmanager;
 
 class Module extends \yii\base\Module
 {

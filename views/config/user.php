@@ -3,7 +3,7 @@
 /*
  * This file is part of the Jultatools project.
  *
- * (c) 7well project <http://github.com/7well>
+ * (c) chd7well project <http://github.com/chd7well>
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
@@ -14,8 +14,8 @@ use yii\widgets\ActiveForm;
 
 /**
  * @var yii\web\View                 $this
- * @var 7well\configmanager\models\Parameter    $parameter
- * @var 7well\configmanager\Module         $module
+ * @var chd7well\configmanager\models\Parameter    $parameter
+ * @var chd7well\configmanager\Module         $module
  */
 
 $userconfig = $model;

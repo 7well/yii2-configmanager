@@ -28,7 +28,7 @@ In your configuration file as new module:
 'modules' => [
 ...
 	'configmanager' => [
-			'class' => '7well\configmanager\Module' ,
+			'class' => 'chd7well\configmanager\Module' ,
 	],
 ]
 ```				
@@ -44,10 +44,10 @@ system defined parameter -> config-set (parent -> child):
 Child will overwrite defined parameters from parent or system. Parent can overwrite system defined parameters. If a parameter is not defined the system wide defined paramter or the parent parameter is used. It is also possible to leafe the parent set blank.
 
 To use config-set insert or set parameter:
-7well/configmanager/config_set = 1
+chd7well/configmanager/config_set = 1
 
 To use the user defined parameters insert or set parameter in the system wide parameter:
-7well/configmanager/user_parameter = 1
+chd7well/configmanager/user_parameter = 1
 
 
 

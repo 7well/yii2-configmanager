@@ -1,13 +1,13 @@
 {
-    "name": "7well/yii2-configmanager",
+    "name": "chd7well/yii2-configmanager",
     "description": "Flexible configuartion/parameter manager for Yii2",
-    "keywords": ["yii2", "yii2-configmanager", "configuration parameter management", "7well"],
+    "keywords": ["yii2", "yii2-configmanager", "configuration parameter management", "chd7well"],
     "type": "yii2-extension",
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/7well/yii2-configmanager/issues?state=open",
-        "forum": "https://gitter.im/7well/yii2-configmanager",
-        "source": "https://github.com/7well/yii2-configmanager"
+        "issues": "https://github.com/chd7well/yii2-configmanager/issues?state=open",
+        "forum": "https://gitter.im/chd7well/yii2-configmanager",
+        "source": "https://github.com/chd7well/yii2-configmanager"
     },
     "authors": [
         {
@@ -19,15 +19,15 @@
     "minimum-stability": "dev",
     "require": {
         "yiisoft/yii2": "~2.0",
-        "7well/yii2-user": "~0.10"
+        "chd7well/yii2-user": "~0.10"
     },
     "autoload": {
         "psr-4": {
-            "7well\\configmanager\\": ""
+            "chd7well\\configmanager\\": ""
         }
     },
     "extra": {
-        "bootstrap": "7well\\configmanager\\Bootstrap",
+        "bootstrap": "chd7well\\configmanager\\Bootstrap",
         "asset-installer-paths": {
             "npm-asset-library": "vendor/npm",
             "bower-asset-library": "vendor/bower"

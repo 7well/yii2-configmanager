@@ -7,9 +7,9 @@ easy three-step process.
 Step 1: Download Yii2-configmanager using composer
 -----------------------------------------
 
-Add `"7well/yii2-configmanager": "*"` to the require section of your **composer.json** file. And run `composer update`
+Add `"chd7well/yii2-configmanager": "*"` to the require section of your **composer.json** file. And run `composer update`
 to download and install Yii2-configmanager.
-Note: yii2-configmanager needs the 7well/yii2-user package. For configure this package see https://github.com/7well/yii2-user
+Note: yii2-configmanager needs the chd7well/yii2-user package. For configure this package see https://github.com/chd7well/yii2-user
 
 Step 2: Configure your application
 ------------------------------------
@@ -22,7 +22,7 @@ Add following lines to your main configuration file:
 'modules' => [
 ...
     'configmanager' => [
-            'class' => '7well\configmanager\Module' ,
+            'class' => 'chd7well\configmanager\Module' ,
     ],
 ]
 ```
@@ -36,14 +36,14 @@ After you downloaded and configured Yii2-configmanager, the last thing you need 
 the migrations:
 
 ```bash
-$ php yii migrate/up --migrationPath=@vendor/7well/yii2-configmanager/migrations
+$ php yii migrate/up --migrationPath=@vendor/chd7well/yii2-configmanager/migrations
 ```
 > **NOTE:** If you have installed the yii-configmanager per `composer` you must edite the extionsions.php in vendor/yiisoft/: disable bootstrap loading from the yii2-configmanager component apply the migration and activate the bootstrap for die configmanager!
 
 FAQ
 ---
 
-**Installation failed. There are no files in `vendor/7well/yii2-configmanager`**
+**Installation failed. There are no files in `vendor/chd7well/yii2-configmanager`**
 
 *Try removing Yii2-configmanager version constraint from composer.json, then run `composer update`. After composer finish
  removing of Yii2-configmanager, re-add version constraint and `composer update` again.*

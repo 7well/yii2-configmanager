@@ -3,13 +3,13 @@
 /*
  * This file is part of the jualtools project.
  *
- * (c) 7well project <http://github.com/7well/>
+ * (c) chd7well project <http://github.com/chd7well/>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace 7well\configmanager;
+namespace chd7well\configmanager;
 
 use yii\authclient\Collection;
 use yii\base\BootstrapInterface;
@@ -17,10 +17,10 @@ use yii\base\InvalidConfigException;
 use yii\i18n\PhpMessageSource;
 use yii\web\GroupUrlRule;
 use yii\console\Application as ConsoleApplication;
-use 7well\configmanager\models\Parameter;
-use 7well\configmanager\models\Config;
-use 7well\configmanager\models\ConfigUser;
-use 7well\configmanager\models\ConfigParameter;
+use chd7well\configmanager\models\Parameter;
+use chd7well\configmanager\models\Config;
+use chd7well\configmanager\models\ConfigUser;
+use chd7well\configmanager\models\ConfigParameter;
 
 /**
  * Bootstrap class registers configmanager components.
@@ -31,11 +31,11 @@ class Bootstrap implements BootstrapInterface
 {
     /** @var array Model's map */
     private $_modelMap = [
-        'Parameter'             => '7well\configmanager\models\Parameter',
-    	'ParameterSearch'       => '7well\configmanager\models\ParameterSearch',
-     	'ConfigSearch'       =>    '7well\configmanager\models\ConfigSearch',
-    	'ConfigParameterSearch'       =>    '7well\configmanager\models\ConfigSearch',
-    	'ConfigUser'       =>    '7well\configmanager\models\ConfigUser',
+        'Parameter'             => 'chd7well\configmanager\models\Parameter',
+    	'ParameterSearch'       => 'chd7well\configmanager\models\ParameterSearch',
+     	'ConfigSearch'       =>    'chd7well\configmanager\models\ConfigSearch',
+    	'ConfigParameterSearch'       =>    'chd7well\configmanager\models\ConfigSearch',
+    	'ConfigUser'       =>    'chd7well\configmanager\models\ConfigUser',
     ];
 
     private function setParameter($app, $parametername, $parametervalue) {
@@ -60,7 +60,7 @@ class Bootstrap implements BootstrapInterface
         if ($app->hasModule('configmanager') && ($module = $app->getModule('configmanager')) instanceof Module) {
             $this->_modelMap = array_merge($this->_modelMap, $module->modelMap);
             foreach ($this->_modelMap as $name => $definition) {
-                $class = "7well\\configmanager\\models\\" . $name;
+                $class = "chd7well\\configmanager\\models\\" . $name;
                 \Yii::$container->set($class, $definition);
                 $modelName = is_array($definition) ? $definition['class'] : $definition;
                 $module->modelMap[$name] = $modelName;
@@ -86,10 +86,10 @@ class Bootstrap implements BootstrapInterface
             	$this->setParameter($app, $para->parametername, $para->value);
             }
             
-            $is_config_set = Parameter::findOne(['parametername'=>'7well/configmanager/config_set']);
-            $is_user_config_set = Parameter::findOne(['parametername'=>'7well/configmanager/user_parameter']);
+            $is_config_set = Parameter::findOne(['parametername'=>'chd7well/configmanager/config_set']);
+            $is_user_config_set = Parameter::findOne(['parametername'=>'chd7well/configmanager/user_parameter']);
 		if (get_class ( \Yii::$app ) === 'yii\web\Application') {
-			if (isset ( $app->params ['7well/configmanager/config_set'] ) && isset ( $app->params ['7well/configmanager/user_parameter'] ) && $app->params ['7well/configmanager/config_set'] == 1 && $app->params ['7well/configmanager/user_parameter'] == 1 && isset ( \Yii::$app->user->id )) {
+			if (isset ( $app->params ['chd7well/configmanager/config_set'] ) && isset ( $app->params ['chd7well/configmanager/user_parameter'] ) && $app->params ['chd7well/configmanager/config_set'] == 1 && $app->params ['chd7well/configmanager/user_parameter'] == 1 && isset ( \Yii::$app->user->id )) {
 				$configuser = ConfigUser::findOne ( [ 
 						'user_ID' => \Yii::$app->user->id 
 				] );

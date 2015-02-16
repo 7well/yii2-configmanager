@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of the 7well project.
+ * This file is part of the chd7well project.
  *
- * (c) 7well project <http://github.com/7well>
+ * (c) chd7well project <http://github.com/chd7well>
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
@@ -13,12 +13,12 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
-use 7well\configmanager\models\Config;
+use chd7well\configmanager\models\Config;
 
 /**
  * @var yii\web\View $this
  * @var yii\data\ActiveDataProvider $dataProvider
- * @var 7well\user\models\UserSearch $searchModel
+ * @var chd7well\user\models\UserSearch $searchModel
  */
 
 $this->title = Yii::t('configmanager', 'Manage Parameter of Configuration');
