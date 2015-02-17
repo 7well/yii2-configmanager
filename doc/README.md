@@ -5,7 +5,7 @@ Quick Info
 ---------------
 No documentation available in this state of deverlopment! 
 
-Only default parameters in sys_parameters are supported yet.
+
 If flag bootstrap is true the parameter or compoment is defined at the bootstrap process, otherwise the parameter can get by the method Parameter::getParameterValue('parametername').
 To setup a parameter as a component use a '@' character for parametername:
 
@@ -25,9 +25,9 @@ paramtername '@db' value:
 -User Module:
 Modules have the prefix '#':
 ```
-paramtername '#user' value:
+paramtername '#tstmodule' value:
 [
-            'class' => 'chd7well\user\Module',
+            'class' => 'chd7well\tstmodule\Module',
         ]
 ```      
 Setup:
